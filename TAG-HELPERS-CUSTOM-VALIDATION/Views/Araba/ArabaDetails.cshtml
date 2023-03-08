@@ -1,0 +1,81 @@
+﻿@model Araba
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-20">
+            <h1 style="font-size=bold">Car Information</h1>
+        </div>
+        <div class="col-md-2"> @ViewBag.postback</div>
+    </div>
+    <hr />
+    <div class="bg-success p-2 text-dark bg-opacity-25">
+
+        <form asp-action="ArabaDetails">
+            <div>
+                <label class="form-label" asp-for="Id"></label>
+                <input class="form-control mb-2" asp-for="Id" placeholder="ID" />
+            </div>
+
+            <div>
+                <label class="form-label" asp-for="Marka"></label>
+                <input class="form-control mb-2" asp-for="Marka" placeholder="Marka" />
+            </div>
+
+            <div>
+                <label class="form-label" asp-for="Seri"></label>
+                <input class="form-control mb-2" asp-for="Seri" placeholder="Seri" />
+            </div>
+
+            <div>
+                <label class="form-label" asp-for="Model"></label>
+                <input class="form-control mb-2" asp-for="Model" placeholder="Model" />
+            </div>
+
+            <div>
+                <label class="form-label" asp-for="Yil"></label>
+                <input class="form-control mb-2" asp-for="Yil" placeholder="Yıl" />
+            </div>
+            <div>
+                <label class="form-label" asp-for="Yakit"></label>
+                <input class="form-control mb-2" asp-for="Yakit" placeholder="Yakıt" />
+            </div>
+            <div>
+                <label class="form-label" asp-for="AracDurumu"></label>
+                <br />
+                <select class="dropdown-menu-start ms-0" asp-for="AracDurumu" asp-items="@(Html.GetEnumSelectList<AracDurumu>())"> </select>
+            </div>
+            <div>
+                <label class="form-label" asp-for="Renk"></label>
+                <input class="form-control mb-2" asp-for="Renk" placeholder="Renk" />
+            </div>
+            <div>
+                <label class="form-label" asp-for="Kilometre"></label>
+                <input class="form-control mb-2" asp-for="Kilometre" placeholder="Kilometre" />
+            </div>
+            <div>
+                <label class="form-label" asp-for="Fiyat"></label>
+                <input class="form-control mb-2" asp-for="Fiyat" placeholder="Fiyat" />
+            </div>
+            <div>
+                <label class="form-label" asp-for="VitesType"></label>
+                <br />
+                <select class="dropdown-menu-start ms-0" asp-for="VitesType" asp-items="@(Html.GetEnumSelectList<VitesType>())"> </select>
+            </div>
+            <div>
+                <label class="form-label" asp-for="MotorPower"></label>
+                <input class="form-control mb-2" asp-for="MotorPower" placeholder="Motor Power" />
+            </div> 
+            <div>
+                <label class="form-label" asp-for="Plaka"></label>
+                <input class="form-control mb-2" asp-for="Plaka" placeholder="Plaka" />
+            </div>
+            <div>
+                <input class="mt-4 btn-success p-2" type="submit" value="NewAraba" />
+            </div>
+            <div class="mt-5 text-danger" asp-validation-summary="All"></div>
+        </form>
+
+    </div>
+</div>
+
